@@ -1,0 +1,214 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding: 0 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #001060;
+    color: #fff;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Header styling */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Add padding to the left */
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+header .login-btn {
+    background-color: #001060;
+}
+
+header .signup-btn {
+    background-color: #ffffff;
+    color: #001060;
+    border: 2px solid #001060;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.main-content .info {
+    flex-basis: 50%;
+    padding-right: 20;
+}
+
+.main-content .info p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.main-content .waiting-list-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.main-content .waiting-list-form button {
+    background-color: #001060;
+    color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main-content .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-content .info, .main-content .image {
+        flex-basis: 100%;
+        padding-right: 20px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+}
+
+.main-content {
+    padding: 20px; /* Adds padding around the main content */
+}
+
+.image img {
+    max-width: 100%; /* Ensures the image does not exceed the container width */
+    padding: 20px;
+    height: auto;    /* Maintains the aspect ratio */
+    display: block;
+    margin: 0 auto;  /* Center the image */
+    width: 450px;    /* You can adjust this to make the image smaller */
+    border-radius: 20px !important
+
+}
+
+.auth-buttons button {
+    margin-left: 10px;
+    padding: 15px 25px; /* Increased padding: 15px top/bottom and 30px left/right */
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #00008b;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.auth-buttons .signup {
+    background-color: #00008b;
+}
+
+.auth-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* Global font setting */
+body {
+    font-family: 'Urbanist', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 600; /* Makes headings bold */
+}
+
+p, input, button {
+    font-weight: 400; /* Normal weight for text, input, buttons */
+}
+
+button {
+    font-weight: 500; /* Slightly bolder for buttons */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.header {
+     width: 100vw; /* Full width of the viewport */
+        background-color: #001060; /* Blue background */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        box-sizing: border-box; /* Ensures padding doesn't affect the width */
+        margin: 0; /* Removes any margin */
+}
+
+.container {
+    max-width: 1200px; /* Maximum width for the content */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px; /* Adds 20px padding on the left and right */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Styles for the success message */
+.message-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #155724;
+    background-color: #d4edda; /* Light green background for success */
+    border: 1px solid #c3e6cb; /* Green border */
+    display: none; /* Hide by default */
+    text-align: center;
+}
+
+.message-box.error {
+    color: #721c24;
+    background-color: #f8d7da; /* Light red background for error */
+    border: 1px solid #f5c6cb;
+}
+
