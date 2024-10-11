@@ -239,20 +239,24 @@ html, body {
     margin: auto; /* Center the modal */
 }
 
-.modal-content img {
-    width: 80px;
-    margin-bottom: 20px;
+.modal-content .logo-image {
+    width: 120px; /* Adjust this width based on your needs */
+    height: auto; /* Keep aspect ratio */
+    display: block;
+    margin: 0 auto 20px auto; /* Center the logo and add margin below */
 }
 
 .modal-content h2 {
     margin-bottom: 10px;
     font-size: 24px;
     color: #001B7D;
+    text-align: center;
 }
 
 .modal-content p {
     margin-bottom: 20px;
     color: #888;
+    text-align: center;
 }
 
 /* Social Login Buttons */
@@ -349,8 +353,8 @@ html, body {
 /* Close button styling for login modal */
 .close-modal-btn {
     position: absolute;
-    top: 20px !important; /* Force the top position */
-    right: 60px !important; /* Force the right position */
+    top: 10px; /* Adjust to fit correctly */
+    right: 15px; /* Adjust to fit correctly */
     background-color: #ff4b4b;
     color: white;
     border: none;
@@ -363,4 +367,5 @@ html, body {
 .close-modal-btn:hover {
     background-color: #ff1c1c;
 }
+
 

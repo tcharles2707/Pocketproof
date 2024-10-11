@@ -39,40 +39,44 @@
         </div>
     </section>
 
-    <!-- Login Modal (hidden by default) -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal-btn" onclick="closeLoginModal()">X</button>
-            <img src="Untitled.svg" alt="Pocket Proof Logo" class="logo-image">
-            <h2>PocketProof</h2>
-            <p>Good to see you back!</p>
+<!-- Login Modal (hidden by default) -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <!-- Close button -->
+        <button class="close-modal-btn" onclick="closeLoginModal()">X</button>
 
-            <!-- Social login buttons -->
-            <div class="social-login">
-                <a href="#"><img src="apple-logo.png" alt="Login with Apple"></a>
-                <a href="#"><img src="google-logo.png" alt="Login with Google"></a>
+
+
+        <h2>PocketProof</h2>
+        <p>Enter your login details</p>
+
+        <!-- Social login buttons -->
+        <div class="social-login">
+            <a href="#"><img src="apple-logo.png" alt="Login with Apple"></a>
+            <a href="#"><img src="google-logo.png" alt="Login with Google"></a>
+        </div>
+
+        <!-- Login form -->
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="email" id="loginEmail" placeholder="Enter email/phone number" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
             </div>
 
-            <!-- Login form -->
-            <form id="loginForm">
-                <div class="input-group">
-                    <input type="email" id="loginEmail" placeholder="Enter email/phone number" required>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
-                </div>
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox" id="rememberMe"> Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+            </div>
 
-                <div class="remember-me">
-                    <label>
-                        <input type="checkbox" id="rememberMe"> Remember me
-                    </label>
-                    <a href="#">Forgot Password?</a>
-                </div>
-
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-        </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
     </div>
+</div>
+
 
     <!-- JavaScript for form submission and login/signup functionality -->
     <script>
