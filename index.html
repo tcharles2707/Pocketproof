@@ -14,12 +14,12 @@
             <img src="Untitled.svg" alt="Pocket Proof Logo" class="logo-image">
         </div>
         <div class="auth-buttons">
-            <button class="login">Login</button>
-            <button class="signup">Sign Up</button>
+            <button class="login" id="loginBtn">Login</button>
+            <button class="signup" id="signupBtn">Sign Up</button>
         </div>
     </header>
 
-    <section class="main-content">
+    <section class="main-content" id="signupPage">
         <div class="info">
             <p>Our app is in high demand and we’ve reached our limit for now.
                Join the waiting list below, and we’ll let you know when more spots are available.</p>
@@ -35,13 +35,67 @@
             <div id="message" class="message-box"></div>
         </div>
         <div class="image">
-            <img src="app-placeholder-image.jpg" alt="App Image" />
+            <img src="app-placeholder-image.png" alt="App Image" />
         </div>
     </section>
 
-    <!-- JavaScript for form submission and message display -->
+    <!-- Login Modal (hidden by default) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal-btn" onclick="closeLoginModal()">X</button>
+            <img src="Untitled.svg" alt="Pocket Proof Logo" class="logo-image">
+            <h2>PocketProof</h2>
+            <p>Good to see you back!</p>
+
+            <!-- Social login buttons -->
+            <div class="social-login">
+                <a href="#"><img src="apple-logo.png" alt="Login with Apple"></a>
+                <a href="#"><img src="google-logo.png" alt="Login with Google"></a>
+            </div>
+
+            <!-- Login form -->
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="email" id="loginEmail" placeholder="Enter email/phone number" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+
+                <div class="remember-me">
+                    <label>
+                        <input type="checkbox" id="rememberMe"> Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for form submission and login/signup functionality -->
     <script>
-        // Handle the form submission with JavaScript
+        // Open login modal
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+
+        loginBtn.addEventListener('click', function() {
+            loginModal.style.display = 'flex';
+        });
+
+        // Close login modal
+        function closeLoginModal() {
+            loginModal.style.display = 'none';
+        }
+
+        // Reload the page when the signup button is clicked
+        const signupBtn = document.getElementById('signupBtn');
+        signupBtn.addEventListener('click', function() {
+            location.reload();
+        });
+
+        // Handle form submission (sign-up)
         document.getElementById("waitingListForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Prevent the default form submission behavior
 
