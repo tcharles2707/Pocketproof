@@ -1,335 +1,4 @@
-/* Reset some default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    padding: 0 20px;
-    font-family: 'Urbanist', sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    background-color: #001060;
-    color: #fff;
-}
-
-.header {
-    width: 100vw; /* Full width of the viewport */
-    background-color: #001060; /* Blue background */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    box-sizing: border-box; /* Ensures padding doesn't affect the width */
-    margin: 0; /* Removes any margin */
-}
-
-header .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Header styling */
-.header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-header .login-btn {
-    background-color: #001060;
-}
-
-header .signup-btn {
-    background-color: #ffffff;
-    color: #001060;
-    border: 2px solid #001060;
-}
-
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    padding: 40px; /* Add more padding around the main content */
-    max-width: 1200px; /* Ensure there's a maximum width */
-    margin: 0 auto; /* Center the content */
-}
-
-.main-content .info {
-    flex-basis: 50%;
-    padding-right: 20px;
-}
-
-.main-content .info p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.main-content .waiting-list-form input,
-.main-content .waiting-list-form button {
-    display: block;
-    width: 100%;
-    padding: 12px 10px;
-    margin-bottom: 15px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.main-content .waiting-list-form button {
-    background-color: #001060;
-    color: #fff;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto; /* Center image on mobile */
-    width: 450px;
-    border-radius: 20px;
-}
-
-.auth-buttons button {
-    margin-left: 10px;
-    padding: 15px 25px;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #00008b;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.auth-buttons .signup {
-    background-color: #00008b;
-}
-
-.auth-buttons button:hover {
-    background-color: #001b8f;
-    opacity: 0.8;
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px 10px; /* Adjust padding for smaller screens */
-    }
-
-    .main-content .info, .main-content .image {
-        flex-basis: 100%;
-        padding-right: 0;
-    }
-
-    header {
-        flex-direction: column;
-    }
-
-    .auth-buttons {
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .auth-buttons button {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-    }
-
-    .modal-content {
-        width: 90%; /* Make modal width smaller on mobile */
-        padding: 15px;
-    }
-}
-
-.message-box {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #155724;
-    background-color: #d4edda;
-    border: 1px solid #c3e6cb;
-    display: none;
-    text-align: center;
-}
-
-.message-box.error {
-    color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-}
-
-/* Modal Styles */
-.modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
-}
-
-.modal-content {
-    position: relative; /* Ensure the close button positions correctly within the modal */
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    width: 400px;
-    margin: auto;
-}
-
-.modal-content .logo-image {
-    width: 120px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-.modal-content h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    color: #001B7D;
-    text-align: center;
-}
-
-.modal-content p {
-    margin-bottom: 20px;
-    color: #888;
-    text-align: center;
-}
-
-/* Social Login Buttons */
-.social-login {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.social-login img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.input-group {
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.input-group input {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 14px;
-    background-color: #f4f4f4;
-}
-
-.input-group input:focus {
-    outline: none;
-    border-color: #001B7D;
-}
-
-/* Remember Me Checkbox */
-.remember-me {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.remember-me input {
-    margin-right: 5px;
-}
-
-/* Login Button */
-.login-btn {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    border: none;
-    background-color: #001B7D;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.login-btn:hover {
-    background-color: #000A4D;
-}
-
-/* Close Button for Modal */
-.close-modal-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff4b4b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.close-modal-btn:hover {
-    background-color: #ff1c1c;
-}
-
-.extra-options a {
-    color: #001B7D;
-    text-decoration: none;
-}
-
-.extra-options a:hover {
-    text-decoration: underline;
-}
-
-/* Style for the login logo */
-.login-modal-logo {
-    width: 200px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    padding-bottom: 15px;
-}
-
-/* General Styles */
+/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
@@ -343,25 +12,26 @@ body {
     padding: 0 20px;
 }
 
-header {
+.header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 15px 20px;
     background-color: #001060;
     color: #fff;
 }
 
-.logo h1 {
+.header .logo h1 {
     font-size: 24px;
     font-weight: bold;
 }
 
-/* Menu Icon */
-.menu-icon {
-    font-size: 30px;
+.menu-icon,
+.hamburger-menu {
+    font-size: 24px;
     cursor: pointer;
-    display: block;
+    color: #fff;
 }
 
 /* Sidebar Styles */
@@ -416,121 +86,6 @@ header {
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
-}
-
-.waiting-list-form input,
-.waiting-list-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.waiting-list-form button {
-    background-color: #001060;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 20px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .main-content {
-        padding: 20px 10px;
-    }
-}
-
-
-/* Reset some default browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Urbanist', sans-serif;
-    background-color: #fff;
-    color: #333;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    background-color: #001060;
-    color: #fff;
-}
-
-.menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-}
-
-.sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #001060;
-    overflow-x: hidden;
-    transition: 0.3s;
-    padding-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sidebar .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 30px;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.sidebar .login,
-.sidebar .signup {
-    margin: 20px 0;
-    padding: 15px 25px;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #00008b;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 80%;
-    text-align: center;
-}
-
-.sidebar .login:hover,
-.sidebar .signup:hover {
-    background-color: #001b8f;
-    opacity: 0.8;
-}
-
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -545,11 +100,12 @@ header {
     margin-bottom: 30px;
 }
 
-.main-content .waiting-list-form input {
+.main-content .waiting-list-form input,
+.main-content .waiting-list-form button {
     display: block;
     width: 100%;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -558,46 +114,148 @@ header {
 .main-content .waiting-list-form button {
     background-color: #001060;
     color: #fff;
-    padding: 10px;
-    font-size: 16px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.main-content .image img {
-    max-width: 90%;
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
     margin: 20px auto;
     border-radius: 20px;
+}
+
+/* Message box styles */
+.message-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    display: none;
+}
+
+.message-box.success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* Modal Styles */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #001B7D;
+    text-align: center;
+}
+
+/* Social Login Buttons */
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-login img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Close Button for Modal */
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    background-color: #ff1c1c;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     .main-content {
-        flex-direction: column;
-        align-items: center;
+        padding: 20px 10px;
         text-align: center;
+        flex-direction: column;
     }
 
-    .main-content .info, .main-content .image {
+    .main-content .info,
+    .main-content .image {
         flex-basis: 100%;
         padding-right: 0;
     }
-}
 
+    .header {
+        padding: 10px 15px;
+    }
+
+    .auth-buttons {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .auth-buttons button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+}
 
 /* Main content layout for larger screens */
 @media (min-width: 768px) {
     .main-content {
         display: flex;
-        flex-direction: row; /* Make content and image side by side */
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
 
     .main-content .info {
         flex: 1;
-        padding-right: 20px; /* Space between text and image */
+        padding-right: 20px;
     }
 
     .main-content .image {
@@ -606,8 +264,3 @@ header {
     }
 }
 
-/* Ensure the image doesn't shrink too much on larger screens */
-.image img {
-    max-width: 90%; /* Adjust as necessary */
-    border-radius: 20px;
-}
