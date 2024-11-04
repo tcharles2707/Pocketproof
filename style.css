@@ -1,4 +1,4 @@
-/* Reset default browser styles */
+/* Reset some default browser styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +9,9 @@ body {
     font-family: 'Urbanist', sans-serif;
     background-color: #fff;
     color: #333;
-    padding: 0 20px;
 }
 
+/* Header and Hamburger Menu Styling */
 .header {
     width: 100%;
     display: flex;
@@ -27,11 +27,11 @@ body {
     font-weight: bold;
 }
 
-.menu-icon,
 .hamburger-menu {
     font-size: 24px;
     cursor: pointer;
     color: #fff;
+    margin-left: auto; /* Pushes the hamburger to the right */
 }
 
 /* Sidebar Styles */
@@ -81,6 +81,7 @@ body {
     opacity: 0.8;
 }
 
+/* Main Content Styling */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -104,9 +105,9 @@ body {
 .main-content .waiting-list-form button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px 10px;
     margin-bottom: 15px;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
@@ -119,27 +120,24 @@ body {
 }
 
 .image img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
     display: block;
     margin: 20px auto;
     border-radius: 20px;
 }
 
-/* Message box styles */
+/* Message Box Styling */
 .message-box {
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
     font-size: 16px;
-    text-align: center;
-    display: none;
-}
-
-.message-box.success {
     color: #155724;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
+    display: none;
+    text-align: center;
 }
 
 .message-box.error {
@@ -158,7 +156,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
 }
 
 .modal-content {
@@ -177,6 +175,12 @@ body {
     text-align: center;
 }
 
+.modal-content p {
+    margin-bottom: 20px;
+    color: #888;
+    text-align: center;
+}
+
 /* Social Login Buttons */
 .social-login {
     display: flex;
@@ -191,34 +195,16 @@ body {
     border-radius: 50%;
 }
 
-/* Close Button for Modal */
-.close-modal-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff4b4b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.close-modal-btn:hover {
-    background-color: #ff1c1c;
-}
-
-/* Responsive Styles */
+/* Responsive Styling */
 @media (max-width: 768px) {
     .main-content {
-        padding: 20px 10px;
-        text-align: center;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px;
     }
 
-    .main-content .info,
-    .main-content .image {
+    .main-content .info, .main-content .image {
         flex-basis: 100%;
         padding-right: 0;
     }
@@ -227,15 +213,8 @@ body {
         padding: 10px 15px;
     }
 
-    .auth-buttons {
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .auth-buttons button {
-        padding: 10px 15px;
-        font-size: 0.9rem;
+    .hamburger-menu {
+        margin-right: 0;
     }
 
     .modal-content {
@@ -248,7 +227,7 @@ body {
 @media (min-width: 768px) {
     .main-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; /* Make content and image side by side */
         align-items: center;
         justify-content: space-between;
     }
@@ -263,4 +242,3 @@ body {
         text-align: center;
     }
 }
-
