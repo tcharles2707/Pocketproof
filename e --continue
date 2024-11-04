@@ -1,0 +1,78 @@
+[33mcommit 2d162fd2242f14e6306df5ed0a29e584ab3efb0f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmy-new-branch[m[33m)[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Mon Nov 4 12:22:14 2024 +0200
+
+    Add sensitive files to .gitignore
+
+[33mcommit 746a51dc442ef0a924328532b49214a26fc89f52[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 3de88bc bf59837
+Author: taryn <taryncharles101@gmail.com>
+Date:   Mon Nov 4 12:15:42 2024 +0200
+
+    Your commit message here
+
+[33mcommit 3de88bc93a43895028dc807a12a74b8c8e59c776[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Mon Nov 4 12:06:33 2024 +0200
+
+    New pages
+
+[33mcommit 1e91571e74b8055b42775e017af8aec420284c67[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Mon Nov 4 10:56:19 2024 +0200
+
+    1059
+
+[33mcommit c3de336357836c8247d4ad398ef844691799dd51[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Mon Nov 4 10:53:37 2024 +0200
+
+    new page
+
+[33mcommit bf5983778bc42b154a2df5570cd5929ccafc62d8[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: tcharles2707 <163520224+tcharles2707@users.noreply.github.com>
+Date:   Thu Oct 31 09:15:16 2024 +0200
+
+    Update CNAME
+
+[33mcommit e7987ae9a84ee9d2bd0012dea78f6f6bf1ea12d9[m
+Author: tcharles2707 <163520224+tcharles2707@users.noreply.github.com>
+Date:   Wed Oct 30 09:30:23 2024 +0200
+
+    Create CNAME
+
+[33mcommit c1e208759332b412691747ac027172458119be29[m
+Author: tcharles2707 <163520224+tcharles2707@users.noreply.github.com>
+Date:   Wed Oct 30 09:20:40 2024 +0200
+
+    Delete CNAME
+
+[33mcommit 8217cfc8147befbff0c949f8e9a7ce7062b19e3f[m
+Author: tcharles2707 <163520224+tcharles2707@users.noreply.github.com>
+Date:   Fri Oct 25 11:13:09 2024 +0200
+
+    Create CNAME
+
+[33mcommit 09de5e8470b40f106db878877b8de8acf6bf2d92[m[33m ([m[1;32mmaster[m[33m)[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Fri Oct 11 14:33:47 2024 +0200
+
+    fixed logo in login screen
+
+[33mcommit 7a5d7cda54e46c22795fe6be64700f13b06cdbc6[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Fri Oct 11 13:19:32 2024 +0200
+
+    login button functionality
+
+[33mcommit 777f8336c5f6134d0b989281f8ab6010997a6126[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Fri Oct 11 11:50:54 2024 +0200
+
+    updated style of site
+
+[33mcommit 75470ba90e4d61a3e20e4f41143a48b7a3f7eed6[m
+Author: taryn <taryncharles101@gmail.com>
+Date:   Fri Oct 11 10:39:06 2024 +0200
+
+    sign up page- backend. user email saved to Cloud Firestore
