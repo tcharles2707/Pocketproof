@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pocket Proof Waitlist</title>
-    <!-- Google Font: Urbanist -->
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,25 +12,25 @@
         <div class="logo">
             <img src="Untitled.svg" alt="Pocket Proof Logo" class="logo-image">
         </div>
-        <div class="auth-buttons">
-            <button class="login" id="loginBtn">Login</button>
-            <button class="signup" id="signupBtn">Sign Up</button>
-        </div>
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
     </header>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebarMenu" class="sidebar">
+        <button class="close-btn" onclick="closeSidebar()">×</button>
+        <button class="login" id="loginBtn">Login</button>
+        <button class="signup" id="signupBtn">Sign Up</button>
+    </div>
 
     <section class="main-content" id="signupPage">
         <div class="info">
             <p>Our app is in high demand and we’ve reached our limit for now.
                Join the waiting list below, and we’ll let you know when more spots are available.</p>
-
-            <!-- Form for waiting list -->
             <form class="waiting-list-form" id="waitingListForm">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <button type="submit">Sign Up</button>
             </form>
-
-            <!-- Message container for displaying success/failure messages -->
             <div id="message" class="message-box"></div>
         </div>
         <div class="image">
@@ -39,98 +38,44 @@
         </div>
     </section>
 
-<!-- Login Modal (hidden by default) -->
-<div id="loginModal" class="modal">
-    <div class="modal-content">
-        <!-- Close button -->
-        <button class="close-modal-btn" onclick="closeLoginModal()">X</button>
-
-
-
-        <h2>PocketProof</h2>
-        <p>Enter your login details</p>
-
-        <!-- Social login buttons -->
-        <div class="social-login">
-            <a href="#"><img src="apple-logo.png" alt="Login with Apple"></a>
-            <a href="#"><img src="google-logo.png" alt="Login with Google"></a>
-        </div>
-
-        <!-- Login form -->
-        <form id="loginForm">
-            <div class="input-group">
-                <input type="email" id="loginEmail" placeholder="Enter email/phone number" required>
-            </div>
-            <div class="input-group">
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
-            </div>
-
-            <div class="remember-me">
-                <label>
-                    <input type="checkbox" id="rememberMe"> Remember me
-                </label>
-                <a href="#">Forgot Password?</a>
-            </div>
-
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-    </div>
-</div>
-
-
-    <!-- JavaScript for form submission and login/signup functionality -->
     <script>
-        // Open login modal
-        const loginBtn = document.getElementById('loginBtn');
-        const loginModal = document.getElementById('loginModal');
+        // Open sidebar menu
+        const menuIcon = document.getElementById('menuIcon');
+        const sidebarMenu = document.getElementById('sidebarMenu');
 
-        loginBtn.addEventListener('click', function() {
-            loginModal.style.display = 'flex';
+        menuIcon.addEventListener('click', function() {
+            sidebarMenu.style.width = '250px';
         });
 
-        // Close login modal
-        function closeLoginModal() {
-            loginModal.style.display = 'none';
+        // Close sidebar menu
+        function closeSidebar() {
+            sidebarMenu.style.width = '0';
         }
 
-        // Reload the page when the signup button is clicked
-        const signupBtn = document.getElementById('signupBtn');
-        signupBtn.addEventListener('click', function() {
-            location.reload();
-        });
-
-        // Handle form submission (sign-up)
+        // Form submission handling remains unchanged
         document.getElementById("waitingListForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-
-            // Collect form data
+            event.preventDefault();
             const name = document.querySelector('input[name="name"]').value;
             const email = document.querySelector('input[name="email"]').value;
 
-            // Send form data to the server
             fetch('http://localhost:3000/signup', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: name, email: email })
             })
-            .then(response => response.text()) // Assuming server responds with plain text
+            .then(response => response.text())
             .then(data => {
-                // Display success message
                 const messageBox = document.getElementById("message");
                 messageBox.classList.remove("error");
                 messageBox.innerText = "Successfully signed up!";
-                messageBox.style.display = "block"; // Show the success message
-                // Optionally clear the form
+                messageBox.style.display = "block";
                 document.getElementById("waitingListForm").reset();
             })
             .catch(error => {
-                // Display error message if something goes wrong
                 const messageBox = document.getElementById("message");
                 messageBox.classList.add("error");
                 messageBox.innerText = "Error signing up. Please try again.";
-                messageBox.style.display = "block"; // Show the error message
+                messageBox.style.display = "block";
                 console.error('Error:', error);
             });
         });
