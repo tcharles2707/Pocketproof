@@ -7,7 +7,7 @@ document.getElementById("waitingListForm").addEventListener("submit", function(e
     const email = document.querySelector('input[name="email"]').value;
 
     // Send form data to the server
-    fetch('http://localhost:3000/signup', {
+    fetch('https://pocketproof.app/signup', { // Replace with the live server URL
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -33,3 +33,19 @@ document.getElementById("waitingListForm").addEventListener("submit", function(e
         console.error('Error:', error);
     });
 });
+
+// Sidebar menu functionality
+const menuIcon = document.getElementById('menuIcon');
+const sidebarMenu = document.getElementById('sidebarMenu');
+
+menuIcon.addEventListener('click', function() {
+    sidebarMenu.style.width = '250px'; // Open the sidebar menu
+});
+
+// Close sidebar menu
+function closeSidebar() {
+    sidebarMenu.style.width = '0'; // Close the sidebar menu
+}
+
+// Attach close function to the close button in the sidebar
+document.querySelector('.close-btn').addEventListener('click', closeSidebar);
