@@ -10,6 +10,7 @@ body {
     background-color: #fff;
     color: #333;
     padding: 0 20px;
+    font-family: 'Urbanist', sans-serif;
 }
 
 header {
@@ -19,6 +20,17 @@ header {
     padding: 20px 0;
     background-color: #001060;
     color: #fff;
+}
+
+.header {
+    width: 100vw; /* Full width of the viewport */
+    background-color: #001060; /* Blue background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+    margin: 0; /* Removes any margin */
 }
 
 header .logo h1 {
@@ -32,7 +44,7 @@ header .logo h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Add padding to the left */
+    padding: 10px 20px;
 }
 
 header nav a {
@@ -67,7 +79,7 @@ header .signup-btn {
 
 .main-content .info {
     flex-basis: 50%;
-    padding-right: 20;
+    padding-right: 20px;
 }
 
 .main-content .info p {
@@ -75,12 +87,13 @@ header .signup-btn {
     margin-bottom: 30px;
 }
 
-.main-content .waiting-list-form input {
+.main-content .waiting-list-form input,
+.main-content .waiting-list-form button {
     display: block;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 16px;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
@@ -95,42 +108,13 @@ header .signup-btn {
     cursor: pointer;
 }
 
-.main-content .image img {
-    max-width: 90%; /* Reduce the image size */
-    margin: 20px auto; /* Add space and center the image */
-    border-radius: 20px;
-}
-
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .main-content .info, .main-content .image {
-        flex-basis: 100%;
-        padding-right: 20px;
-    }
-
-    header {
-        flex-direction: column;
-    }
-}
-
-.main-content {
-    padding: 20px; /* Adds padding around the main content */
-}
-
 .image img {
-    max-width: 100%; /* Ensures the image does not exceed the container width */
-    padding: 20px;
-    height: auto;    /* Maintains the aspect ratio */
+    max-width: 100%;
+    height: auto;
     display: block;
-    margin: 0 auto;  /* Center the image */
-    width: 450px;    /* You can adjust this to make the image smaller */
-    border-radius: 20px !important
-
+    margin: 20px auto; /* Center image on mobile */
+    width: 450px;
+    border-radius: 20px;
 }
 
 .auth-buttons button {
@@ -154,66 +138,55 @@ header .signup-btn {
     opacity: 0.8;
 }
 
-/* Global font setting */
-body {
-    font-family: 'Urbanist', sans-serif;
-}
-
-h1, h2, h3 {
-    font-weight: 600; /* Makes headings bold */
-}
-
-p, input, button {
-    font-weight: 400; /* Normal weight for text, input, buttons */
-}
-
-button {
-    font-weight: 500; /* Slightly bolder for buttons */
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.header {
-     width: 100vw; /* Full width of the viewport */
-        background-color: #001060; /* Blue background */
-        display: flex;
-        justify-content: space-between;
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
         align-items: center;
-        padding: 10px 20px;
-        box-sizing: border-box; /* Ensures padding doesn't affect the width */
-        margin: 0; /* Removes any margin */
+        text-align: center;
+        padding: 20px 10px; /* Adjust padding for smaller screens */
+    }
+
+    .main-content .info, .main-content .image {
+        flex-basis: 100%;
+        padding-right: 0;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .auth-buttons {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .auth-buttons button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        width: 90%; /* Make modal width smaller on mobile */
+        padding: 15px;
+    }
 }
 
-.container {
-    max-width: 1200px; /* Maximum width for the content */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px; /* Adds 20px padding on the left and right */
-    margin: 0 auto; /* Center the container */
-}
-
-/* Styles for the success message */
 .message-box {
     margin-top: 20px;
     padding: 15px;
     border-radius: 5px;
     font-size: 16px;
     color: #155724;
-    background-color: #d4edda; /* Light green background for success */
-    border: 1px solid #c3e6cb; /* Green border */
-    display: none; /* Hide by default */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    display: none;
     text-align: center;
 }
 
 .message-box.error {
     color: #721c24;
-    background-color: #f8d7da; /* Light red background for error */
+    background-color: #f8d7da;
     border: 1px solid #f5c6cb;
 }
 
@@ -235,15 +208,15 @@ html, body {
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    width: 400px; /* Adjust as necessary */
-    margin: auto; /* Center the modal */
+    width: 400px;
+    margin: auto;
 }
 
 .modal-content .logo-image {
-    width: 120px; /* Adjust this width based on your needs */
-    height: auto; /* Keep aspect ratio */
+    width: 120px;
+    height: auto;
     display: block;
-    margin: 0 auto 20px auto; /* Center the logo and add margin below */
+    margin: 0 auto 20px auto;
 }
 
 .modal-content h2 {
@@ -321,40 +294,10 @@ html, body {
 }
 
 /* Close Button for Modal */
-    position: absolute;
-    top: 20px !important; /* Force the top position */
-    right: 60px !important; /* Force the right position */
-    background-color: #ff4b4b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 16px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.extra-options a {
-    color: #001B7D;
-    text-decoration: none;
-}
-
-.extra-options a:hover {
-    text-decoration: underline;
-}
-
-/* Style for the login logo */
-.login-modal-logo {
-    width: 200px; /* Adjust the width as needed */
-    height: auto; /* Keeps the aspect ratio */
-    margin: 0 auto; /* Centers the logo */
-    display: block; /* Ensures it behaves like a block element */
-    padding-bottom: 15px; /* Add space below the logo */
-
-/* Close button styling for login modal */
 .close-modal-btn {
     position: absolute;
-    top: 10px; /* Adjust to fit correctly */
-    right: 15px; /* Adjust to fit correctly */
+    top: 10px;
+    right: 10px;
     background-color: #ff4b4b;
     color: white;
     border: none;
@@ -368,4 +311,20 @@ html, body {
     background-color: #ff1c1c;
 }
 
+.extra-options a {
+    color: #001B7D;
+    text-decoration: none;
+}
 
+.extra-options a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the login logo */
+.login-modal-logo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 15px;
+}
