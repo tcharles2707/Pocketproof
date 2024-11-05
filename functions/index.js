@@ -6,7 +6,13 @@ const cors = require('cors')({ origin: true });
 admin.initializeApp();
 const db = admin.firestore();
 
-// Create a Firebase Function to handle sign-ups
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const cors = require('cors')({ origin: true });
+
+admin.initializeApp();
+const db = admin.firestore();
+
 exports.signUp = functions.https.onRequest((req, res) => {
     cors(req, res, async () => {
         if (req.method !== 'POST') {
@@ -23,6 +29,7 @@ exports.signUp = functions.https.onRequest((req, res) => {
         }
     });
 });
+
 
     // (Optional) Add database logic here if needed, such as saving to Firestore or logging the data.
 
