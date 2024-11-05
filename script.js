@@ -6,26 +6,37 @@ document.getElementById("waitingListForm").addEventListener("submit", function(e
     const name = document.querySelector('input[name="name"]').value;
     const email = document.querySelector('input[name="email"]').value;
 
-    // Send form data to the server
-fetch('https://signup-m7nt6cwi3q-uc.a.run.app', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email })
-})
-.then(response => response.text()) // Assuming server responds with plain text
-.then(data => {
+    // Send form data to the Firebase function
+    fetch('https://signup-m7nt6cwi3q-uc.a.run.app', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email })
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.text(); // Assuming server responds with plain text on success
+        } else {
+            throw new Error("Failed to sign up");
+        }
+    })
+    .then(data => {
         // Display success message
         const messageBox = document.getElementById("message");
         messageBox.classList.remove("error");
+        messageBox.classList.add("success");
         messageBox.innerText = "Successfully signed up!";
         messageBox.style.display = "block"; // Show the success message
-        // Optionally clear the form
+
+        // Clear the form
         document.getElementById("waitingListForm").reset();
     })
     .catch(error => {
         // Display error message if something goes wrong
         const messageBox = document.getElementById("message");
         messageBox.classList.add("error");
+        messageBox.classList.remove("success");
         messageBox.innerText = "Error signing up. Please try again.";
         messageBox.style.display = "block"; // Show the error message
         console.error('Error:', error);
@@ -36,6 +47,7 @@ fetch('https://signup-m7nt6cwi3q-uc.a.run.app', {
 const menuIcon = document.getElementById('menuIcon');
 const sidebarMenu = document.getElementById('sidebarMenu');
 
+// Open sidebar menu
 menuIcon.addEventListener('click', function() {
     sidebarMenu.style.width = '250px'; // Open the sidebar menu
 });
