@@ -7,13 +7,13 @@ document.getElementById("waitingListForm").addEventListener("submit", function(e
     const email = document.querySelector('input[name="email"]').value;
 
     // Send form data to the server
-    fetch('https://signup-m7nt6cwi3q-uc.a.run.app', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, email: email })
-    })
-    .then(response => response.text()) // Assuming the server responds with plain text
-    .then(data => {
+fetch('https://signup-m7nt6cwi3q-uc.a.run.app', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email })
+})
+.then(response => response.text()) // Assuming server responds with plain text
+.then(data => {
         // Display success message
         const messageBox = document.getElementById("message");
         messageBox.classList.remove("error");
