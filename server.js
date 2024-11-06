@@ -20,16 +20,22 @@ async function accessSecretVersion() {
 }
 
 // Initialize Firebase Admin SDK when secret is accessed
-accessSecretVersion()
-  .then((key) => {
+async function initializeFirebase() {
+  try {
+    const key = await accessSecretVersion();
     const admin = require('firebase-admin');
     admin.initializeApp({
       credential: admin.credential.cert(JSON.parse(key)),
     });
+    return admin.firestore();
+  } catch (error) {
+    console.error('Failed to initialize Firebase Admin SDK:', error);
+    throw error;
+  }
+}
 
-    const db = admin.firestore();
-
-    // Initialize the app
+initializeFirebase()
+  .then((db) => {
     const app = express();
 
     // Middleware
@@ -38,7 +44,9 @@ accessSecretVersion()
 
     // Configure CORS
     app.use(cors({
-      origin: 'https://pocketproof.app' // Change to your actual origin
+      origin: 'https://pocketproof.app', // Ensure this matches your actual domain
+      methods: 'POST, GET, OPTIONS',
+      allowedHeaders: 'Content-Type'
     }));
 
     // Serve static files from public directory
@@ -71,5 +79,6 @@ accessSecretVersion()
     });
   })
   .catch((error) => {
-    console.error('Failed to initialize Firebase Admin SDK:', error);
+    console.error('Server initialization failed:', error);
+    process.exit(1); // Exit if Firebase setup fails
   });
