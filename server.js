@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path'); // Ensure you import the path module
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
@@ -12,7 +12,6 @@ async function accessSecretVersion() {
     const [version] = await client.accessSecretVersion({
       name: 'projects/pocketproof/secrets/pocketproofs_FIREBASE_ADMIN/versions/latest',
     });
-
     return version.payload.data.toString('utf8');
   } catch (error) {
     console.error('Error accessing secret:', error);
@@ -36,7 +35,11 @@ accessSecretVersion()
     // Middleware
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
-    app.use(cors());
+
+    // Configure CORS
+    app.use(cors({
+      origin: 'https://pocketproof.app' // Change to your actual origin
+    }));
 
     // Serve static files from public directory
     app.use(express.static(path.join(__dirname, 'public')));
@@ -52,7 +55,7 @@ accessSecretVersion()
         res.send('Successfully signed up!');
       } catch (err) {
         console.error('Error adding document: ', err);
-        res.status(500).send(err);
+        res.status(500).send('Error signing up. Please try again.');
       }
     });
 
