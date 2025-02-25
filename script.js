@@ -59,3 +59,28 @@ function closeSidebar() {
 
 // Attach close function to the close button in the sidebar
 document.querySelector('.close-btn').addEventListener('click', closeSidebar);
+
+// Login Modal Functionality
+const loginModal = document.getElementById("loginModal");
+const loginBtn = document.getElementById("loginBtn");
+const closeModalBtn = document.querySelector(".close-modal-btn");
+
+// Ensure the modal is hidden on page load
+loginModal.style.display = "none";
+
+// Open login modal when login button is clicked
+loginBtn.addEventListener("click", function () {
+    loginModal.style.display = "flex";
+});
+
+// Close login modal when close button is clicked
+closeModalBtn.addEventListener("click", function () {
+    loginModal.style.display = "none";
+});
+
+// Close login modal when clicking outside the modal
+window.addEventListener("click", function (event) {
+    if (event.target === loginModal) {
+        loginModal.style.display = "none";
+    }
+});
